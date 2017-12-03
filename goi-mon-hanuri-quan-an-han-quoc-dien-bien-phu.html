@@ -343,7 +343,7 @@ $('.sb-list-items').append($(ele));
 </div>
 <div class="nav-place ng-scope" ng-controller="MenuLoginCtrl">
 <div class="account-manage" id="accountmanager">
-<a class="fd-btn-login-new" ng-click="Login()" ng-class="{'loading':IsLoading}"><span>Đăng nhập</span></a><div id="update-profile-popup" style="display: none"></div><div id="update-profile-popup-loading" style="display: none">
+<a class="fd-btn-login-new" href="dang-nhap.html" ng-class="{'loading':IsLoading}"><span>Đăng nhập</span></a><div id="update-profile-popup" style="display: none"></div><div id="update-profile-popup-loading" style="display: none">
 Loading...</div><div id="loginPopup" style="display: none"><div id="loginPopupPH" style="text-align:center; line-height:30px;"><img style="display:inline" src="//static.foody.vn/s1/style/images/icons/ajax-loader.gif"></div></div><div id="loginFacebookPopup" style="display: none">Loading...</div><input type="hidden" id="encryptedlogin">
 </div>
 <div id="NotificationCtrl" style="position: relative; float: left;" ng-controller="NotificationCtrl" ng-init="Init('')" class="ng-scope">
@@ -565,8 +565,8 @@ $('.mic-navigation li[data-item-id=2]').addClass('active');
 Quán ăn</h2>
 <h1 style="font-size: 22px; white-space: pre-line; line-height: normal;" class="name-hot-restaurant">Hanuri - Quán Ăn Hàn Quốc - Điện Biên Phủ</h1>
 <p class="res-common-add">
-<span><a href="/ho-chi-minh/hanuri-quan-an-han-quoc-dien-bien-phu/nearBy" target="_blank"><span style="max-width: 400px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;float: left;">531 Điện Biên Phủ, P. 3</span>,</a></span>
-<span><a href="/ho-chi-minh/khu-vuc-quan-3" title="Quận 3"><span>Quận 3</span></a></span>, <span>TP. HCM</span>
+<span><a href="#" target="_blank"><span style="max-width: 400px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;float: left;">531 Điện Biên Phủ</span>,</a></span>
+<span><a href="#" title="Quận 3"><span>Ba Đình</span></a></span>, <span>Hà Nội</span>
 </p>
 <span class="stt-shop shop-open" style="margin: 10px 0 2px 0; color: #239839;">
 Đang mở cửa</span>
@@ -620,42 +620,28 @@ Quán ăn</h2>
 </div></div></section><div class="micro-main-menu">
 <div class="foody-toolbar fd-clearbox mic-navigation" ng-class="{'loading':IsLoading}"><div class="fd-clearbox" style="top: 0px;"><ul class="list-tool">
 <li data-item-id="0" class="">
-<a data-item-type="home" href="/ho-chi-minh/hanuri-quan-an-han-quoc-dien-bien-phu">
+<a data-item-type="home" href="trang-chu-hanuri-quan-an-han-quoc-dien-bien-phu.html">
 Trang chủ <span class="fa fa-angle-right" style="float: right; font-size: 14px;"></span>
 </a>
 </li>
 <li data-item-name="delivery" class="active">
-<a href="/ho-chi-minh/hanuri-quan-an-han-quoc-dien-bien-phu/goi-mon">
-Giao tận nơi<span class="fa fa-angle-right" style="float: right; font-size: 14px;"></span>
+<a href="goi-mon-hanuri-quan-an-han-quoc-dien-bien-phu.html">
+Đặt món & Đặt bàn<span class="fa fa-angle-right" style="float: right; font-size: 14px;"></span>
 </a>
 </li>
 <li data-item-id="5" data-item-name="album">
-<a href="/ho-chi-minh/hanuri-quan-an-han-quoc-dien-bien-phu/album-anh">
+<a href="album-hanuri-quan-an-han-quoc-dien-bien-phu.html">
 Ảnh &amp; Video<span>778</span>
 <span class="fa fa-angle-right" style="float: right; font-size: 14px;"></span>
 </a>
 </li>
 <li data-item-id="6" data-item-name="review">
-<a href="/ho-chi-minh/hanuri-quan-an-han-quoc-dien-bien-phu/binh-luan">
+<a href="comment-hanuri-quan-an-han-quoc-dien-bien-phu.html">
 Bình luận<span>131</span>
 <span class="fa fa-angle-right" style="float: right; font-size: 14px;"></span>
 </a>
 </li>
-<li>
-<a href="/thuong-hieu/hanuri-mon-an-han-quoc?c=ho-chi-minh">
-Chi nhánh<span class="fa fa-angle-right" style="float: right; font-size: 14px;"></span>
-</a>
-</li>
-<li data-item-id="7">
-<a class="linkmap">
-Bản đồ<span class="fa fa-angle-right" style="float: right; font-size: 14px;"></span>
-</a>
-</li>
-<li>
-<a href="/ho-chi-minh/hanuri-quan-an-han-quoc-dien-bien-phu/bai-dau-xe">
-Bãi đỗ xe<span class="fa fa-angle-right" style="float: right; font-size: 14px;"></span>
-</a>
-</li></ul><div class="foody-banner">
+</ul><div class="foody-banner">
 <div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 320px;"><ul class="bxslider" style="width: auto; position: relative; top: -320px;"><li style="float: none; list-style: none; position: relative; width: 160px;" class="bx-clone">
 <a target="_blank" href="https://www.foody.vn/ho-chi-minh/pq-bistro-am-thuc-au-viet" onclick="ga('ads.send', 'event', 'BANNER_LEFT_MICROSITE', 'Click', 'PQ Bistro - Ẩm Thực Âu Việt');">
 <img src="https://media.foody.vn/biz_banner/foody-160x320_pqbistro-636473737642378229.jpg" title="PQ Bistro - Ẩm Thực Âu Việt" alt="PQ Bistro - Ẩm Thực Âu Việt" width="160">
