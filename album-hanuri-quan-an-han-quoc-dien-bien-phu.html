@@ -151,25 +151,91 @@ $(this).removeClass('watermark');
 });
 })
 </script><div class="header-toolbar"><div class="foody-wapper">
-    <a href="/" class="logo" rel="home" alt="VFood-logo">
+    <a href="trangchu.html" class="logo" rel="home" alt="VFood-logo">
         <img src="image/logo.png" alt="Voody.vn">
     </a>
 <div class="root-cate ng-scope" id="head-province" ng-controller="LocationCtrl" ng-init="Init({Name:'Hà Nội',Id:'218'})" ng-class="{'fl-show':IsShow}">
-<div class="rn-nav-name" ng-click="Show()">
+<div class="rn-nav-name" id="open_city">
 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 85px;">Hà Nội</span> <span class="fa fa-sort-desc"></span>
 </div>
-<div id="popupLocation" class="foody-location" ng-class="{'fl-loading':IsLoading}" style="display:none;"><div class="arrow"></div><ul class="fl-panel"><!-- ngIf: Model.TopCities.length>0 || Model.OtherCities.length>0 --></ul><div class="fl-summary">
-<a href="/ha-noi/o-dau">
-<i class="fa fa-map-marker"></i>
-<span class="ng-binding"></span></a>
-<a href="/ha-noi/binh-luan">
-<i class="fa fa-comment"></i>
-<span class="ng-binding"></span></a>
-<a href="/ha-noi/hinh-anh">
-<i class="fa fa-camera"></i>
-<span class="ng-binding"></span></a><a href="/ha-noi/bo-suu-tap">
-<i class="fa fa-bookmark"></i>
-<span class="ng-binding"></span></a></div></div>
+    <div id="popupLocation" class="foody-location" ng-class="{'fl-loading':IsLoading}" style="display: none;"><div class="arrow"></div><ul class="fl-panel"><!-- ngIf: Model.TopCities.length>0 || Model.OtherCities.length>0 --><li ng-if="Model.TopCities.length>0 || Model.OtherCities.length>0" class="ng-scope" style="">
+        <div class="flp-title">
+            <i class="fa fa-globe"></i>
+            Chọn huyện/quận</div>
+        <div class="loc-contain">
+            <div class="fa fa-search loc-search"></div>
+            <input class="loc-query ng-pristine ng-untouched ng-valid ng-empty" placeholder="Tìm tỉnh thành" id="loc-query" ng-model="Query" ng-change="FilterLocation(Query)" ng-model-options="{ debounce: 500 }">
+        </div> <!-- ngIf: Query --> <!-- ngIf: !Query --><ul class="flp-countries ng-scope" ng-if="!Query">
+        <!-- ngIf: Model.TopCities.length>0 --><li ng-if="Model.TopCities.length>0" class="ng-scope">
+        <ul>
+            <!-- ngRepeat: item in Model.TopCities --><li ng-repeat="item in Model.TopCities" class="ng-scope">
+            <a data-id="217" href="#">
+                <label class="ng-binding">Hà Đông</label>
+                <span class="ng-binding">5300</span>
+            </a>
+        </li><!-- end ngRepeat: item in Model.TopCities --><li ng-repeat="item in Model.TopCities" class="ng-scope">
+            <a data-id="218" href="#">
+                <label class="ng-binding">Thanh Xuân</label>
+                <span class="ng-binding">52,188</span>
+            </a>
+        </li><!-- end ngRepeat: item in Model.TopCities --><li ng-repeat="item in Model.TopCities" class="ng-scope">
+            <a data-id="219" href="#">
+                <label class="ng-binding">Hoàn Kiếm</label>
+                <span class="ng-binding">3005</span>
+            </a>
+        </li><!-- end ngRepeat: item in Model.TopCities --><li ng-repeat="item in Model.TopCities" class="ng-scope">
+            <a data-id="221" href="/can-tho">
+                <label class="ng-binding">Đông Anh</label>
+                <span class="ng-binding">6,035</span>
+            </a>
+        </li><!-- end ngRepeat: item in Model.TopCities --><li ng-repeat="item in Model.TopCities" class="ng-scope">
+            <a data-id="248" href="#">
+                <label class="ng-binding">Hoài Đức</label>
+                <span class="ng-binding">5,117</span>
+            </a>
+        </li><!-- end ngRepeat: item in Model.TopCities --><li ng-repeat="item in Model.TopCities" class="ng-scope">
+            <a data-id="223" href="/vung-tau">
+                <label class="ng-binding">Ba Đình</label>
+                <span class="ng-binding">3,434</span>
+            </a>
+        </li><!-- end ngRepeat: item in Model.TopCities --><li ng-repeat="item in Model.TopCities" class="ng-scope">
+            <a data-id="220" href="#">
+                <label class="ng-binding">Đống Đa</label>
+                <span class="ng-binding">5,728</span>
+            </a>
+        </li><!-- end ngRepeat: item in Model.TopCities --><li ng-repeat="item in Model.TopCities" class="ng-scope">
+            <a data-id="233" href="#">
+                <label class="ng-binding">Hoàng Mai</label>
+                <span class="ng-binding">2,103</span>
+            </a>
+        </li><!-- end ngRepeat: item in Model.TopCities --><li ng-repeat="item in Model.TopCities" class="ng-scope">
+            <a data-id="254" href="#">
+                <label class="ng-binding">Tây Hồ</label>
+                <span class="ng-binding">4,405</span>
+            </a>
+        </li><!-- end ngRepeat: item in Model.TopCities --><li ng-repeat="item in Model.TopCities" class="ng-scope">
+            <a data-id="222" href="#">
+                <label class="ng-binding">Mê Linh</label>
+                <span class="ng-binding">5,179</span>
+            </a>
+        </li><!-- end ngRepeat: item in Model.TopCities --><li ng-repeat="item in Model.TopCities" class="ng-scope">
+            <a data-id="265" href="#">
+                <label class="ng-binding">Sóc sơn</label>
+                <span class="ng-binding">3,071</span>
+            </a>
+        </li><!-- end ngRepeat: item in Model.TopCities --><!-- end ngIf: Model.WorldWideCountries.length>0 --><!-- end ngRepeat: item in Model.WorldWideCountries -->
+        </ul><!-- end ngIf: !Query --></li><!-- end ngIf: Model.TopCities.length>0 || Model.OtherCities.length>0 --></ul><div class="fl-summary">
+        <a href="#">
+            <i class="fa fa-map-marker"></i>
+            <span class="ng-binding">236,708</span></a>
+        <a href="#">
+            <i class="fa fa-comment"></i>
+            <span class="ng-binding">968,987</span></a>
+        <a href="#">
+            <i class="fa fa-camera"></i>
+            <span class="ng-binding">6,711,808</span></a><a href="/ha-noi/bo-suu-tap">
+        <i class="fa fa-bookmark"></i>
+        <span class="ng-binding">14,536,527</span></a></div></div>
 </div>
 <div class="root-cate" id="head-navigation">
 <div class="rn-nav-name">
@@ -340,9 +406,6 @@ $('.sb-list-items').append($(ele));
 </a></li>
 </ul>
 </div></li></ul>
-</div>
-<div class="header-apps">
-<a href="/ung-dung-mobile" target="_blank"><span class="fa fa-mobile"></span>&nbsp;Apps</a>
 </div>
 <div class="nav-place ng-scope" ng-controller="MenuLoginCtrl">
 <div class="account-manage" id="accountmanager">
@@ -1689,327 +1752,328 @@ popupResBooking.Show();
 <script type="text/javascript">
 $(function () {
 $("#tab-footer-top-friend-user").custabs();
-});</script></div><div class="foody-wapper"><ul class="footer-categories fw-padding" style="background: #eeeeee;position: relative;z-index: 11;"><li><div class="fc-title">Danh mục</div><ul>
+});</script></div><div class="foody-wapper">
+    <ul class="footer-categories fw-padding" style="background: #eeeeee;position: relative;z-index: 11;"><li><div class="fc-title">Danh mục</div><ul>
 <li class="">
-<a href="/ha-noi/sang-trong">
+<a href="#">
 <label>Sang trọng</label>
 <span>(74)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/nha-hang">
+<a href="#">
 <label>Nhà hàng</label>
 <span>(2306)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/buffet">
+<a href="#">
 <label>Buffet</label>
 <span>(86)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/an-vat-via-he">
+<a href="#">
 <label>Ăn vặt/vỉa hè</label>
 <span>(2493)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/cafe">
+<a href="#">
 <label>Café/Dessert</label>
 <span>(6653)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/an-chay">
+<a href="#">
 <label>Ăn chay</label>
 <span>(87)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/quan-an">
+<a href="#">
 <label>Quán ăn</label>
 <span>(10791)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/bar-pub">
+<a href="#">
 <label>Bar/Pub</label>
 <span>(172)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/quan-nhau">
+<a href="#">
 <label>Quán nhậu</label>
 <span>(491)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/beer-club">
+<a href="#">
 <label>Beer club</label>
 <span>(80)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/karaoke">
+<a href="#">
 <label>Karaoke</label>
 <span>(623)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/tiem-banh">
+<a href="#">
 <label>Tiệm bánh</label>
 <span>(650)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/khu-du-lich">
+<a href="#">
 <label>Thăm quan &amp; chụp ảnh</label>
 <span>(52)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/billiards">
+<a href="#">
 <label>Billiards</label>
 <span>(103)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/tiec-cuoi-hoi-nghi">
+<a href="#">
 <label>Tiệc cưới/Hội nghị</label>
 <span>(132)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/cua-hang">
+<a href="#">
 <label>Shop/Cửa hàng</label>
 <span>(1812)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/giai-tri">
+<a href="#">
 <label>Rạp chiếu phim</label>
 <span>(35)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/spa-massage">
+<a href="#">
 <label>Spa/Massage</label>
 <span>(894)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/khach-san">
+<a href="#">
 <label>Khách sạn</label>
 <span>(914)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/khu-nghi-duong">
+<a href="#">
 <label>Khu nghỉ dưỡng</label>
 <span>(21)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/du-lich-sinh-thai">
+<a href="#">
 <label>Du lịch sinh thái</label>
 <span>(37)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/lam-toc">
+<a href="#">
 <label>Làm tóc/Gội đầu/Nối mi</label>
 <span>(6186)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/the-duc-tham-my">
+<a href="#">
 <label>Thể dục thẩm mỹ</label>
 <span>(224)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/tiem-nail">
+<a href="#">
 <label>Tiệm nail</label>
 <span>(3203)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/cong-vien-vui-choi">
+<a href="#">
 <label>Công viên vui chơi</label>
 <span>(20)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/bao-tang-di-tich">
+<a href="#">
 <label>Bảo tàng &amp; Di tích</label>
 <span>(21)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/cham-soc-da">
+<a href="#">
 <label>Chăm sóc da</label>
 <span>(313)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/shop-hoa-my-pham">
+<a href="#">
 <label>Shop hóa mỹ phẩm</label>
 <span>(684)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-danh">
+<a href="#">
 <label>Chùa &amp; Nhà thờ</label>
 <span>(24)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/san-khau">
+<a href="#">
 <label>Sân khấu</label>
 <span>(11)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/khu-choi-game">
+<a href="#">
 <label>Khu chơi Game</label>
 <span>(54)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/tiec-tan-noi">
+<a href="#">
 <label>Tiệc tận nơi</label>
 <span>(7)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/shop-online">
+<a href="#">
 <label>Shop Online</label>
 <span>(1340)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/giao-com-van-phong">
+<a href="#">
 <label>Giao cơm văn phòng</label>
 <span>(29)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/ho-boi-san-van-dong">
+<a href="#">
 <label>Thể dục thể thao</label>
 <span>(248)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/sieu-thi">
+<a href="#">
 <label>Siêu thị</label>
 <span>(122)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/trung-tam-thuong-mai">
+<a href="#">
 <label>Trung tâm thương mại</label>
 <span>(24)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/tham-my-vien">
+<a href="#">
 <label>Thẩm mỹ viện</label>
 <span>(226)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/xam-hinh">
+<a href="#">
 <label>Xăm hình</label>
 <span>(80)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/chup-hinh-cuoi">
+<a href="#">
 <label>Chụp hình cưới</label>
 <span>(363)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/trang-diem">
+<a href="#">
 <label>Trang điểm</label>
 <span>(93)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/ao-cuoi">
+<a href="#">
 <label>Áo cưới</label>
 <span>(174)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/hoa-cuoi">
+<a href="#">
 <label>Hoa cưới - Shop hoa</label>
 <span>(260)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/tiec-tai-gia">
+<a href="#">
 <label>Tiệc tại gia</label>
 <span>(25)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/phong-ve-may-bay">
+<a href="#">
 <label>Phòng Vé Máy Bay</label>
 <span>(280)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/phong-kham">
+<a href="#">
 <label>Phòng khám</label>
 <span>(1029)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/nha-khoa">
+<a href="#">
 <label>Nha khoa</label>
 <span>(574)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/nha-thuoc">
+<a href="#">
 <label>Nhà thuốc</label>
 <span>(2954)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/benh-vien">
+<a href="#">
 <label>Bệnh viện</label>
 <span>(102)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dai-hoc-cao-dang">
+<a href="#">
 <label>Đại Học &amp; Cao Đẳng</label>
 <span>(110)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/trung-tam-giao-duc">
+<a href="#">
 <label>Trung tâm giáo dục</label>
 <span>(84)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/trung-tam-ngoai-ngu">
+<a href="#">
 <label>Trung tâm ngoại ngữ</label>
 <span>(237)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/nha-sach-thu-vien">
+<a href="#">
 <label>Nhà sách &amp; Thư viện</label>
 <span>(144)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/nha-tre-mau-giao">
+<a href="#">
 <label>Nhà trẻ &amp; Mẫu giáo</label>
 <span>(1444)</span>
 </a>
@@ -2137,61 +2201,61 @@ $("#tab-footer-top-friend-user").custabs();
 <a class="fc-more">+ Xem thêm</a></li>
 <li><div class="fc-title">Ẩm thực</div><ul>
 <li class="">
-<a href="/ha-noi/dia-diem-phong-cach-viet-nam">
+<a href="#">
 <label>Việt Nam</label>
 <span>(140545)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/dia-diem-phong-cach-chau-a">
+<a href="#">
 <label>Châu Á</label>
 <span>(8368)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/dia-diem-phong-cach-tay-au">
+<a href="#">
 <label>Tây Âu</label>
 <span>(2176)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/dia-diem-phong-cach-chau-my">
+<a href="#">
 <label>Châu Mỹ</label>
 <span>(736)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/dia-diem-phong-cach-dong-au">
+<a href="#">
 <label>Đông Âu</label>
 <span>(120)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/dia-diem-phong-cach-uc">
+<a href="#">
 <label>Úc</label>
 <span>(61)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phong-cach-bac-au">
+<a href="#">
 <label>Bắc Âu</label>
 <span>(15)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phong-cach-quoc-te">
+<a href="#">
 <label>Quốc tế</label>
 <span>(3821)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phong-cach-trung-dong">
+<a href="#">
 <label>Trung Đông</label>
 <span>(18)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phong-cach-chau-phi">
+<a href="#">
 <label>Châu Phi</label>
 <span>(14)</span>
 </a>
@@ -2199,163 +2263,163 @@ $("#tab-footer-top-friend-user").custabs();
 <a class="fc-more">+ Xem thêm</a></li>
 <li><div class="fc-title">Phù hợp với mục đích</div><ul>
 <li class="">
-<a href="/ha-noi/dia-diem-phu-hop-an-vat">
+<a href="#">
 <label>Ăn vặt</label>
 <span>(6477)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/dia-diem-phu-hop-an-gia-dinh">
+<a href="#">
 <label>Ăn gia đình</label>
 <span>(12176)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/dia-diem-phu-hop-hen-ho">
+<a href="#">
 <label>Hẹn hò</label>
 <span>(9177)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/dia-diem-phu-hop-bbq">
+<a href="#">
 <label>BBQ - Món Nướng</label>
 <span>(653)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/dia-diem-phu-hop-hop-nhom">
+<a href="#">
 <label>Họp nhóm</label>
 <span>(12031)</span>
 </a>
 </li>
 <li class="">
-<a href="/ha-noi/dia-diem-phu-hop-dai-tiec">
+<a href="#">
 <label>Đãi tiệc</label>
 <span>(1179)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-an-chay">
+<a href="#">
 <label>Ăn chay</label>
 <span>(123)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-giao-tan-noi">
+<a href="#">
 <label>Giao tận nơi</label>
 <span>(1837)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-uong-bia-nhau">
+<a href="#">
 <label>Uống bia - Nhậu</label>
 <span>(3640)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-hat-ho">
+<a href="#">
 <label>Hát hò</label>
 <span>(758)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-chup-hinh-quay-phim">
+<a href="#">
 <label>Chụp hình - Quay phim</label>
 <span>(154)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-tiep-khach">
+<a href="#">
 <label>Tiếp khách</label>
 <span>(3637)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-an-binh-dan-quan-coc">
+<a href="#">
 <label>Ăn bình dân - Quán Cóc</label>
 <span>(6427)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-buffet">
+<a href="#">
 <label>Buffet</label>
 <span>(214)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-takeaway-mang-ve">
+<a href="#">
 <label>Takeaway - Mang về</label>
 <span>(11833)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-to-chuc-tiec-cuoi">
+<a href="#">
 <label>Tổ chức tiệc cưới</label>
 <span>(173)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-ngam-canh">
+<a href="#">
 <label>Ngắm cảnh</label>
 <span>(419)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-thu-gian">
+<a href="#">
 <label>Thư giãn</label>
 <span>(7691)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-doc-sach-hoc-bai">
+<a href="#">
 <label>Đọc sách - học bài</label>
 <span>(491)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-nghe-nhac">
+<a href="#">
 <label>Nghe nhạc</label>
 <span>(1029)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-du-lich">
+<a href="#">
 <label>Du lịch</label>
 <span>(253)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-an-fastfood">
+<a href="#">
 <label>Ăn Fastfood</label>
 <span>(949)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-tiep-khach-sang-trong">
+<a href="#">
 <label>Tiếp khách sang trọng</label>
 <span>(317)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-picnic">
+<a href="#">
 <label>Dã Ngoại</label>
 <span>(13)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-danh-cho-nam-gioi">
+<a href="#">
 <label>Dành cho Nam giới</label>
 <span>(155)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-tiec-ngoai-troi">
+<a href="#">
 <label>Tiệc ngoài trời</label>
 <span>(87)</span>
 </a>
 </li>
 <li class="fc-hide">
-<a href="/ha-noi/dia-diem-phu-hop-xem-phim-hd">
+<a href="#">
 <label>Xem phim HD</label>
 <span>(94)</span>
 </a>
