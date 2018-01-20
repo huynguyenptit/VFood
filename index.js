@@ -12,13 +12,13 @@ async function launchBrowser(){
 async function run() {
     const browser = await launchBrowser();
     const page = await browser.newPage();
-    await page.goto('https://www.foody.vn/ho-chi-minh/hanuri-quan-an-han-quoc-dien-bien-phu/binh-luan');
+    await page.goto('https://page-preview.instapage.com/api/v1/page/html?roomHash=1d9a6b8ad4d69bd91a3cc846e776faf15676145a3a16eac1da773adabf1e0a8d&version=newest&variation=A&responsiveMode=null');
     await sleep(10000);
     const html = await page.evaluate(() => {
         const html = document.querySelector('html').outerHTML;
         return html;
     });
-    fs.writeFile('comment-hanuri-quan-an-han-quoc-dien-bien-phu.html',html, function (err) {
+    fs.writeFile('landingpage.html',html, function (err) {
         if (err) throw err;
         console.log('Saved!');
     });
